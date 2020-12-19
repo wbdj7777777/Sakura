@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#all{
+		
+		height: 500px;
+		width: 475px;
+		position: absolute;
+		margin:auto;
+		left: 0;
+		right: 0;
+
+	}
+	#p1s{
+		color: gray;	
+	}
+	#p2s{
+		color: gray;
+	}
+	.first{
+		height: 30px;
+		width: 275px;
+		float: right;
+		border:none;
+		display: block;
+		position: relative;
+		bottom: 31px;
+		outline: 0;
+		 
+	}
+	#fourth{
+		height: 50px;
+		width: 430px;
+		background-color: pink;
+		color:white;
+	}
+	.fifth{
+		width: 450px;
+		display: block;
+		color: gray;
+		font-size: 20px;
+	}
+	.eve{
+		height: 30px;
+		width: 400px;
+		border-collapse: : 0.5px;
+		border:1px gray solid;
+		padding: 15px;
+		display: inline-block;
+	}
+	.sixth{
+		height: 30px;
+	}
+	.success{
+		color: red;
+		display: inline-block;
+	}
+	#eve1{
+		display: inline-block;
+	}
+	#p1s{
+		font-size: 10px;
+	}
+	#p2s{
+		font-size: 10px;
+	}
+</style>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="all">
+		<div class="eve"><p class="fifth">用 户 名</p><form><input class="first" id="first1" type="text" name="name" onfocus="show1()" onblur="show2()"></form></div><div class="success" id="success1"></div>
+		<div class="sixth" id="sixth1"></div>
+		<div class="eve"><p class="fifth">设置密码</p><form><input class="first" id="first2" type="password" name="code" onfocus="show3()" onblur="show4()"></form></div>
+		<div class="success" id="success2"></div>
+		<div class="sixth" id="sixth2"></div>
+		<div id="eve1"><input id="fourth" type="button" name="submit" value="立即注册" onclick="show5()"></div>
+		<div class="success" id="success3"></div>
+	</form>
+	</div>
+	<script type="text/javascript">
+		var p1=document.createElement("p");
+		var p1b=document.getElementById('sixth1');
+		p1b.appendChild(p1);
+		function show1(){
+			p1.innerHTML="<p id='p1s'>支持中文数字</p>";
+		}
+		function show2(){
+			if(document.getElementById('first1').value===''){
+				document.getElementById('p1s').innerHTML='内容不能为空';
+			}else{
+				document.getElementById('p1s').innerHTML='';
+			}
+			
+		}
+		var p2=document.createElement("p");
+		var p2b=document.getElementById('sixth2');
+		p2b.appendChild(p2);
+		function show3(){
+			p2.innerHTML="<p id='p2s'>建议使用两种字符组合</p>";
+		}
+		function show4(){
+			
+			if(document.getElementById('first2').value===''){
+				document.getElementById('p2s').innerHTML='密码不能为空';
+			}
+			else{
+				document.getElementById('p2s').innerHTML='';
+			}
+			
+		}
+		function show5(){
+			var p3=document.createElement("p");
+			var p4=document.createElement("p");
+			var p5=document.createElement("p");
+			var p3b=document.getElementById("success1");
+			var p4b=document.getElementById("success2");
+			var p5b=document.getElementById("success3");
+			p3b.appendChild(p3);
+			p4b.appendChild(p4);
+			p5b.appendChild(p5);
+			p3.innerHTML='用户名：'+document.getElementById('first1').value;
+			p4.innerHTML='密码：'+document.getElementById('first2').value;
+			p5.innerHTML="注册成功";
+		}
+
+	</script>
+</body>
+</html>
